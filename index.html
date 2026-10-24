@@ -56,6 +56,7 @@ svg.i{width:17px;height:17px;flex:none;stroke:currentColor;fill:none;stroke-widt
 /* ---------- shell ---------- */
 .app{display:grid;grid-template-columns:244px minmax(0,1fr);gap:22px;max-width:1760px;margin:0 auto}
 .side{position:sticky;top:16px;align-self:start;display:flex;flex-direction:column;gap:16px;max-height:calc(100vh - 32px);overflow:auto;padding:2px 2px 6px}
+.side>*{flex-shrink:0}
 .brand{display:flex;gap:12px;align-items:center;padding:4px 2px}
 .logo{width:44px;height:44px;border-radius:14px;background:var(--pill);color:var(--pill-fg);display:grid;place-items:center;font:600 13px var(--f-ui);letter-spacing:.04em;flex:none}
 .brand b{display:block;font-weight:600;font-size:15px;letter-spacing:-.01em}
@@ -63,17 +64,26 @@ svg.i{width:17px;height:17px;flex:none;stroke:currentColor;fill:none;stroke-widt
 .quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .tile{all:unset;cursor:pointer;background:var(--raised);border:1px solid var(--line);border-radius:18px;padding:14px 8px 12px;display:grid;justify-items:center;gap:7px;text-align:center;font-size:12.5px;line-height:1.25;color:var(--ink-2);box-shadow:var(--shadow);transition:transform .15s,color .15s}
 .tile:hover{color:var(--ink);transform:translateY(-1px)}
-.navs{display:grid;gap:12px}
-.sec{display:grid;gap:4px}
+.navs{display:grid;gap:14px}
+.sbox{all:unset;box-sizing:border-box;flex:none;cursor:text;display:flex;align-items:center;gap:10px;height:42px;padding:0 10px 0 14px;border-radius:999px;background:color-mix(in srgb,var(--raised) 70%,transparent);border:1px solid var(--line);color:var(--ink-3);font-size:13.5px;transition:border-color .15s,background .15s}
+.sbox:hover{border-color:var(--line-2);background:var(--raised)}
+.sbox svg{width:16px;height:16px;flex:none}
+.sbox span{flex:1}
+.sbox kbd{font:500 10.5px var(--f-ui);color:var(--ink-3);border:1px solid var(--line);border-radius:6px;padding:2px 6px;background:var(--surface)}
+.top .srch{display:none}
+.sec{display:grid;gap:2px}
 .nav-label{display:flex;align-items:center;gap:8px;font:500 10.5px var(--f-ui);letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin:0 6px 2px}
 .nav-label i,.eyebrow i,.card-t i{width:6px;height:6px;border-radius:50%;background:var(--dot);flex:none}
-.ni{all:unset;cursor:pointer;position:relative;display:flex;align-items:center;gap:10px;height:38px;padding:0 14px;border-radius:999px;background:var(--sunk);color:var(--ink-2);font-size:13.5px;transition:background .15s,color .15s}
-.ni:hover{color:var(--ink);background:var(--raised)}
+.ni{all:unset;cursor:pointer;position:relative;display:flex;align-items:center;gap:11px;height:36px;padding:0 12px;border-radius:12px;background:transparent;color:var(--ink-2);font-size:13.5px;transition:background .15s,color .15s,box-shadow .15s}
+.ni svg{width:17px;height:17px;flex:none;color:var(--ink-3);transition:color .15s}
+.ni:hover{color:var(--ink);background:color-mix(in srgb,var(--raised) 62%,transparent)}
+.ni:hover svg{color:var(--ink-2)}
 .ni .arr{margin-left:auto;width:15px;height:15px;opacity:.4}
 .ni>span:not(.knob){white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .ni .badge{margin-left:auto;font:600 10.5px/18px var(--f-ui);background:var(--bad);color:var(--on-bad);border-radius:999px;padding:0 7px;font-style:normal}
 .ni .badge+.arr{margin-left:6px}
-.ni.on{background:var(--pill);color:var(--pill-fg);margin-right:46px}
+.ni.on{background:var(--raised);color:var(--ink);font-weight:500;box-shadow:0 1px 2px rgba(20,33,42,.06),0 4px 14px -8px rgba(20,33,42,.18),0 0 0 1px color-mix(in srgb,var(--line) 70%,transparent)}
+.ni.on svg{color:var(--ink)}
 .knob{position:absolute;right:-46px;top:0;width:38px;height:38px;border-radius:50%;background:var(--pill);color:var(--pill-fg);display:grid;place-items:center}
 .side-foot{margin-top:auto;display:grid;gap:8px;padding-top:6px}
 .who{display:flex;gap:10px;align-items:center;background:var(--pill);color:var(--pill-fg);border-radius:18px;padding:10px 14px}
@@ -113,7 +123,7 @@ h1{font-weight:300;font-size:clamp(28px,3.2vw,40px);letter-spacing:-.025em;margi
 h2{font-weight:400;font-size:22px;letter-spacing:-.015em;margin:6px 0 0;line-height:1.15;text-wrap:balance}
 .ph-r{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .today{color:var(--ink-3);font-size:13px;text-align:right;display:grid;gap:2px}
-.today span{font-size:12px;color:var(--hol)}
+.today span{font-size:12px;color:var(--ink-2);display:inline-flex;align-items:center;justify-content:flex-end;gap:6px;max-width:440px}.today span i{width:6px;height:6px;border-radius:50%;background:var(--hol);flex:none}
 .kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px 22px;margin:0 0 26px}
 .kpis.k4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .kpis.k5{grid-template-columns:repeat(5,minmax(0,1fr))}
@@ -173,6 +183,7 @@ textarea.in{height:auto;min-height:64px;padding:8px 10px;resize:vertical;line-he
 .in.num{width:74px;text-align:right;font-family:var(--f-ui)}
 .in.mono{font-family:var(--f-ui)}
 .grid-f{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:12px}
+#rq-form .grid-f{grid-template-columns:repeat(auto-fit,minmax(132px,1fr))}
 .frm-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px}
 .err{color:var(--bad)!important}
 .cbx{display:flex;align-items:center;gap:9px;font-size:13px;cursor:pointer;padding:4px 0}
@@ -209,7 +220,7 @@ textarea.in{height:auto;min-height:64px;padding:8px 10px;resize:vertical;line-he
 .tl-lab b{font-weight:500;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .tl-lab code{font-size:10.5px;color:var(--ink-3)}
 .tl-h,.tl-band,.tl-days{border-bottom:1px solid var(--line)}
-.tl-h .tl-lab,.tl-band .tl-lab,.tl-days .tl-lab{font:500 9.5px var(--f-ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.tl-h .tl-lab,.tl-band .tl-lab,.tl-days .tl-lab{font:600 11px var(--f-ui);color:var(--ink-2)}
 .hm{font-size:12px;color:var(--ink-2);padding:10px 6px 8px;white-space:nowrap;overflow:hidden;font-weight:500;box-shadow:inset 1px 0 0 var(--line-2)}
 .tl-band{position:relative;height:24px}
 .hb{margin:5px 0;height:14px}
@@ -275,7 +286,7 @@ textarea.in{height:auto;min-height:64px;padding:8px 10px;resize:vertical;line-he
 /* ---------- časová osa · roční přehled ---------- */
 .ty .tl-lab{padding-left:16px}
 .ty-hd{border-bottom:1px solid var(--line)}
-.ty-hd .tl-lab{font:500 9.5px var(--f-ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.ty-hd .tl-lab{font:600 11px var(--f-ui);color:var(--ink-2)}
 .ty-m{font-size:12px;font-weight:500;color:var(--ink-2);padding:10px 6px 8px;white-space:nowrap;overflow:hidden;box-shadow:inset 1px 0 0 var(--line-2)}
 .ty-wk{height:26px}
 .ty-w{font-size:10px;color:var(--ink-3);display:grid;place-items:center;font-variant-numeric:tabular-nums}
@@ -407,7 +418,7 @@ textarea.in{height:auto;min-height:64px;padding:8px 10px;resize:vertical;line-he
 .sev.warn{background:var(--warn)}
 .tb{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
 .tb th,.tb td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line-soft);white-space:nowrap}
-.tb thead th{font:500 10px var(--f-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);vertical-align:bottom}
+.tb thead th{font:600 11.5px var(--f-ui);letter-spacing:0;text-transform:none;color:var(--ink-2);vertical-align:bottom}
 .tb tbody th{font-weight:500}
 .tb .r{text-align:right}
 .tb tr.tot th,.tb tr.tot td{font-weight:600;border-top:1px solid var(--line-2);border-bottom:0}
@@ -418,11 +429,16 @@ textarea.in{height:auto;min-height:64px;padding:8px 10px;resize:vertical;line-he
 .rs-h small{color:var(--ink-3);font-size:12px}
 .rs-h .btn{margin-left:auto}
 .rr{display:grid;grid-template-columns:minmax(150px,1.3fr) 64px 140px minmax(130px,1fr) 272px 118px 104px 30px;gap:10px;align-items:center}
-@media (max-width:1380px){.rr{grid-template-columns:minmax(150px,1.3fr) 64px 140px minmax(130px,1fr)}.rr.head span:nth-child(n+5){display:none}}
-.rr.head{font:500 10px var(--f-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:0 2px}
+.gcard{container-type:inline-size}
+@container (min-width:520px) and (max-width:1090px){
+  .rr{grid-template-columns:minmax(140px,1.3fr) 64px 140px minmax(120px,1fr) 30px;grid-template-areas:"n c k g x" "d d h t t";row-gap:8px;padding-bottom:10px;border-bottom:1px solid var(--line-soft)}
+  .rr>:nth-child(1){grid-area:n}.rr>:nth-child(2){grid-area:c}.rr>:nth-child(3){grid-area:k}.rr>:nth-child(4){grid-area:g}.rr>:nth-child(5){grid-area:d}.rr>:nth-child(6){grid-area:h}.rr>:nth-child(7){grid-area:t}.rr>:nth-child(8){grid-area:x}
+  .rr.head{padding-bottom:0;border-bottom:0}.rr.head span:nth-child(n+5){display:none}
+}
+.rr.head{font:600 11.5px var(--f-ui);letter-spacing:0;text-transform:none;color:var(--ink-2);padding:0 2px}
 .rr.off .in{opacity:.55}
 .tpl{display:grid;grid-template-columns:210px repeat(5,minmax(118px,1fr));gap:4px;min-width:830px}
-.tpl .th{font:500 10px var(--f-ui);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:4px 8px}
+.tpl .th{font:600 11.5px var(--f-ui);color:var(--ink-2);padding:4px 8px}
 .tpl-g{grid-column:1/-1;font-weight:600;font-size:12.5px;padding:12px 4px 2px;border-top:1px solid var(--line-soft)}
 .tpl-g small{font-weight:400;color:var(--ink-3);margin-left:8px}
 .tpl-l{display:flex;align-items:center;gap:8px;padding:0 4px;min-width:0}
@@ -555,6 +571,7 @@ textarea.in{height:auto;min-height:64px;padding:8px 10px;resize:vertical;line-he
 .mini .side .brand .collapse{margin-left:0;width:46px;height:40px;min-height:40px;border-radius:14px}
 .mini .side .brand .bt,.mini .side .nav-label,.mini .side .ni>span:not(.knob),.mini .side .ni .arr,.mini .side .knob,.mini .side .tile span,.mini .side .who>div,.mini .side .linkbtn span{display:none}
 .mini .side .quick{grid-template-columns:1fr;gap:8px}
+.mini .side .sbox{width:46px;height:44px;padding:0;justify-content:center;border-radius:15px}.mini .side .sbox span,.mini .side .sbox kbd{display:none}
 .mini .side .tile{width:46px;height:46px;padding:0;place-content:center;border-radius:15px}
 .mini .side .navs{gap:14px}
 .mini .side .sec{justify-items:center}
@@ -580,7 +597,9 @@ textarea.in{height:auto;min-height:64px;padding:8px 10px;resize:vertical;line-he
 @media (max-width:980px){
   .app{grid-template-columns:minmax(0,1fr);gap:14px}
   .side{position:static;max-height:none;overflow:visible;gap:12px}
-  .quick,.side-foot,.nav-label,.knob,.ni .arr{display:none}
+  .quick,.side-foot,.nav-label,.knob,.ni .arr,.sbox{display:none}
+  .top .srch{display:inline-flex}
+  .ni{background:var(--sunk);border-radius:999px;padding:0 14px}
   .navs{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
   .sec{display:contents}
   .ni{flex:none;height:38px}
@@ -598,6 +617,8 @@ textarea.in{height:auto;min-height:64px;padding:8px 10px;resize:vertical;line-he
   .rr{padding-bottom:10px;border-bottom:1px solid var(--line-soft)}
   .status{display:none}
   .seg.theme span{display:none}
+  .top-r{gap:6px}
+  .top-r .btn-dark{padding:0 13px}
   .pop{right:auto;left:0;width:min(290px,calc(100vw - 48px))}
   .period b{min-width:0}
 }
@@ -878,7 +899,7 @@ button.hmc:hover{transform:scale(1.12);z-index:2;box-shadow:0 6px 14px -6px rgba
 /* ---------- kvóty ---------- */
 .qt{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
 .qt th,.qt td{padding:8px;border-bottom:1px solid var(--line-soft);text-align:left;white-space:nowrap;vertical-align:middle}
-.qt thead th{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.qt thead th{font:600 11.5px var(--f-ui);letter-spacing:0;text-transform:none;color:var(--ink-2);vertical-align:bottom}
 .qt tbody th{font-weight:500}
 .qt .r{text-align:right}
 .qbar{position:relative;width:170px;height:10px;border-radius:5px;background:var(--sunk)}
@@ -1036,7 +1057,7 @@ fieldset.fs[disabled]{opacity:.75}
 /* ---------- volné kapacity a pohled oboru ---------- */
 .li .rdot{height:14px;width:4px;border-radius:2px;display:inline-block;background:var(--c);flex:none}
 .mw{display:grid;grid-template-columns:72px repeat(5,minmax(130px,1fr));gap:6px;min-width:740px}
-.mw-h{font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);text-align:center}
+.mw-h{font-size:11.5px;font-weight:600;color:var(--ink-2);text-align:center}
 .mw-w{font-size:12px;font-weight:600;align-self:start;padding-top:8px}
 .mw-w small{display:block;font-weight:400;color:var(--ink-3);font-size:11px}
 .mw-c{min-height:66px;border-radius:12px;background:var(--surface);border:1px solid var(--line-soft);padding:6px;display:flex;flex-direction:column;gap:4px;min-width:0}
@@ -1074,7 +1095,7 @@ fieldset.fs[disabled]{opacity:.75}
 /* ---------- čekací listiny ---------- */
 .wl{display:grid;gap:8px;min-width:0}
 .wl-r{display:grid;grid-template-columns:minmax(140px,1.1fr) repeat(3,88px) minmax(140px,1fr) minmax(170px,1.4fr) minmax(150px,1fr) 32px;gap:12px;align-items:center;padding:10px 12px;border-radius:14px;background:var(--surface);border:1px solid var(--line-soft)}
-.wl-r.wl-h{background:transparent;border:0;padding:0 12px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.wl-r.wl-h{background:transparent;border:0;padding:0 12px;font-size:11.5px;font-weight:600;color:var(--ink-2)}
 .wl-r .in{height:34px;padding:0 10px}
 .wl-in b{font-size:14px;font-weight:500}
 .wl-n{display:flex;align-items:center;gap:8px;font-weight:500;min-width:0}
@@ -1105,7 +1126,7 @@ fieldset.fs[disabled]{opacity:.75}
 .bpr-h{font-size:13px;font-weight:600;margin:8px 0 0}
 .bpr-h small{font-weight:400;color:var(--ink-3);margin-left:6px;font-size:11.5px}
 .bpr-tb{width:100%;border-collapse:collapse}
-.bpr-tb th{text-align:left;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:500;padding:6px 8px;border-bottom:1px solid var(--line-2)}
+.bpr-tb th{text-align:left;font-size:11.5px;color:var(--ink-2);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--line-2)}
 .bpr-tb td{padding:7px 8px;border-bottom:1px solid var(--line-soft);vertical-align:top}
 .bpr-tb td small{display:block;color:var(--ink-3);font-size:10.5px}
 .bpr-tb .r{text-align:right;white-space:nowrap}
@@ -1148,7 +1169,7 @@ fieldset.fs[disabled]{opacity:.75}
 .wt{display:grid;grid-template-columns:minmax(200px,230px) repeat(var(--nd),minmax(150px,1fr));min-width:calc(220px + var(--nd) * 150px);border-top:1px solid var(--line)}
 .wt-hd{background:var(--surface);border-bottom:1px solid var(--line);border-right:1px solid var(--line-soft);padding:10px 10px 6px;display:flex;flex-direction:column;gap:5px;min-width:0}
 .wt-hd.corner{position:sticky;left:0;z-index:3;justify-content:flex-end;padding-left:16px;border-right:1px solid var(--line)}
-.wt-hd.corner b{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.wt-hd.corner b{font-size:12px;font-weight:600;color:var(--ink-2)}
 .wt-hd.td{background:color-mix(in srgb,var(--dot) 11%,var(--surface));box-shadow:inset 0 3px 0 var(--dot)}
 .wt-hd.hol{background:color-mix(in srgb,var(--hol) 9%,var(--surface))}
 .wt-hd.we{background:color-mix(in srgb,var(--sunk) 70%,var(--surface))}
@@ -1228,7 +1249,7 @@ fieldset.fs[disabled]{opacity:.75}
 .bc-c:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
 .bc-c.we{background:color-mix(in srgb,var(--sunk) 50%,var(--raised))}
 .bc-c.hol{background:color-mix(in srgb,var(--hol) 8%,var(--raised))}
-.bc-c.out{opacity:.85}
+.bc-c.out{opacity:.9}
 .bc-c.sel{box-shadow:inset 0 0 0 2px var(--ink);z-index:2}
 .bc-c.dim>*:not(.bc-d):not(.bc-sch){opacity:.55}
 .bc-d{display:flex;align-items:center;gap:6px;min-width:0;min-height:24px}
@@ -1238,10 +1259,11 @@ fieldset.fs[disabled]{opacity:.75}
 .bc-ow{display:flex;align-items:center;gap:6px}
 .bc-ow .bc-occ{flex:1;min-width:0}
 .bc-ow em{font-style:normal;font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:999px;background:var(--sunk);color:var(--ink-2);flex:none}
-.bc-ow em.hi{background:color-mix(in srgb,var(--ok) 20%,var(--raised));color:var(--ok)}
+.bc-ow em.hi{background:color-mix(in srgb,var(--ok) 16%,var(--raised));color:color-mix(in srgb,var(--ok) 75%,var(--ink))}
 .bc-ow em.lo{background:color-mix(in srgb,var(--warn) 20%,var(--raised));color:var(--warn)}
 .bc-sch{position:absolute;left:0;right:0;top:0;height:3px;background:var(--sch)}
-.bc-d small.bc-scl{color:color-mix(in srgb,var(--sch) 72%,var(--ink));font-weight:500}
+.bc-d small.bc-scl{color:color-mix(in srgb,var(--sch) 52%,var(--ink));font-weight:600}
+:root[data-ui="dark"] .bc-d small.bc-scl{color:color-mix(in srgb,var(--sch) 80%,var(--ink))}
 .bc-bar{position:relative;z-index:1;height:19px;display:flex;align-items:center;gap:5px;padding:0 7px;font-size:10.5px;color:#fff;background:var(--c);margin:0 -9px 0 -8px;white-space:nowrap;overflow:hidden;flex:none}
 .bc-bar.s{margin-left:0;border-top-left-radius:7px;border-bottom-left-radius:7px}
 .bc-bar.e{margin-right:0;border-top-right-radius:7px;border-bottom-right-radius:7px}
@@ -1570,7 +1592,7 @@ button.sx-c:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
 .oh-h{font-size:10.5px;color:var(--ink-2);text-align:center;font-weight:600;line-height:1.15;padding:2px 0 6px}
 .oh-h small{display:block;font-size:9px;color:var(--ink-3);font-weight:500}
 .oh-h.we{color:var(--ink-4)}.oh-h.td{color:var(--dot)}
-.oh-h.l,.oh-h.r{text-align:left;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.oh-h.l,.oh-h.r{text-align:left;font-size:11.5px;color:var(--ink-2);font-weight:600}
 .oh-g{grid-column:1/-1;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding:10px 0 2px;border-bottom:1px solid var(--line-soft);margin-bottom:2px}
 .oh-l{display:flex;align-items:center;gap:7px;min-width:0;font-size:12px}
 .oh-l b{font-weight:650}.oh-l span{color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px}
@@ -1619,7 +1641,7 @@ button.sx-c:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
 .rq-rl{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
 .rq-rm{all:unset;box-sizing:border-box;display:grid;gap:7px;padding:10px 12px;border-radius:14px;background:var(--raised);border:1px solid var(--line);box-shadow:inset 3px 0 0 var(--c);cursor:default;transition:border-color .15s,background .15s}
 .rq-rm.pick{cursor:pointer}.rq-rm.pick:hover{border-color:var(--ink-3)}
-.rq-rm.on{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 9%,var(--raised))}
+.rq-rm.on{border-color:color-mix(in srgb,var(--bad) 45%,var(--line))}
 .rq-rm:focus-visible{outline:2px solid var(--dot);outline-offset:2px}
 .rq-rt{display:flex;align-items:center;gap:7px;min-width:0}
 .rq-rt i{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
@@ -1637,6 +1659,12 @@ button.sx-c:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
 .tag.rq-sc{white-space:nowrap;background:color-mix(in srgb,var(--bad) 18%,var(--raised));border-color:var(--bad);color:var(--ink);font-weight:600}
 @media (max-width:640px){.rq-rooms{padding:12px}.rq-rh .seg{display:flex;width:100%}.rq-rh .seg button{flex:1;padding:6px 4px;font-size:12px}.rq-rl{grid-template-columns:1fr}}
 /* ---------- čitelnost voleb ---------- */
+:root[data-ui="dark"] .ni:hover{background:rgba(255,255,255,.045)}
+:root[data-ui="dark"] .ni.on{background:#1F2B52;color:#fff;box-shadow:inset 0 0 0 1px #34436F,0 10px 24px -14px rgba(0,0,0,.7)}
+:root[data-ui="dark"] .ni.on svg{color:#5EC8E4}
+:root[data-ui="dark"] .sbox{background:#111834;border-color:#2D3A5E}
+:root[data-ui="dark"] .sbox:hover{border-color:#3E4B70}
+:root[data-ui="dark"] .sbox kbd{background:#0D142A;border-color:#2D3A5E}
 .rpick .chip{gap:6px}
 .rpick .chip::before{content:"";flex:none;box-sizing:border-box;width:14px;height:14px;border-radius:4px;border:1.5px solid var(--ink-3);display:grid;place-items:center;font-size:10px;font-weight:800;line-height:1}
 .rpick .chip.on::before{content:"✓";border-color:var(--pill-fg);background:var(--pill-fg);color:var(--pill)}
@@ -2518,8 +2546,9 @@ const NAV=[['Provoz',[['home','Přehled','home'],['kal','Kalendář provozu','mo
 function sideHTML(){
   const n=ISSUES().length,lab=S.mini?'Rozbalit menu':'Sbalit menu',pend=D.requests.filter(q=>q.status==='pending'&&(S.role!=='spec'||q.specId===S.roleSpec)).length,cl=(D.claims||[]).filter(c=>c.status==='pending').length;
   return `<div class="brand"><div class="logo">RO</div><div class="bt"><b>Rozpis operativy</b><small>Krajská nemocnice Liberec</small></div><button class="collapse" data-act="side" aria-label="${lab}" aria-expanded="${!S.mini}" title="${lab} (klávesa [ )">${ico(S.mini?'expand':'collapse')}</button></div>
+  <button class="sbox" data-act="cmd" title="Hledat sály, obory, data a akce (Ctrl/⌘ + K)">${ico('search')}<span>Hledat…</span><kbd>⌘K</kbd></button>
   <div class="quick"><button class="tile" data-act="bulk" title="Hromadná úprava">${ico('layers')}<span>Hromadná<br>úprava</span></button><button class="tile" data-act="newReq" title="Nový požadavek">${ico('req')}<span>Nový<br>požadavek</span></button></div>
-  <nav class="navs" aria-label="Hlavní navigace">${navList().map(([lab,items])=>`<div class="sec"><div class="nav-label"><i></i>${lab}</div>${items.map(([v,t,ic])=>`<button class="ni${S.view===v?' on':''}" data-act="go" data-v="${v}" title="${t}"${S.view===v?' aria-current="page"':''}>${ico(ic)}<span>${t}</span>${v==='alerts'&&n?`<em class="badge">${n}</em>`:''}${v==='requests'&&pend?`<em class="badge" title="Čeká na schválení">${pend}</em>`:''}${v==='free'&&cl&&isCoord()?`<em class="badge" title="Žádosti o volnou kapacitu">${cl}</em>`:''}${S.view===v?`<span class="knob">${ico('arrdr')}</span>`:ico('arr','arr')}</button>`).join('')}</div>`).join('')}</nav>
+  <nav class="navs" aria-label="Hlavní navigace">${navList().map(([lab,items])=>`<div class="sec"><div class="nav-label"><i></i>${lab}</div>${items.map(([v,t,ic])=>`<button class="ni${S.view===v?' on':''}" data-act="go" data-v="${v}" title="${t}"${S.view===v?' aria-current="page"':''}>${ico(ic)}<span>${t}</span>${v==='alerts'&&n?`<em class="badge">${n}</em>`:''}${v==='requests'&&pend?`<em class="badge" title="Čeká na schválení">${pend}</em>`:''}${v==='free'&&cl&&isCoord()?`<em class="badge" title="Žádosti o volnou kapacitu">${cl}</em>`:''}</button>`).join('')}</div>`).join('')}</nav>
   <div class="side-foot"><div class="foot-row"><div class="rolew"><button class="who" data-act="rolePop" aria-expanded="${!!S.rolePop}" title="${esc(roleLabel())} – klepnutím přepnete roli">${ico('user')}<div><b>${esc(roleLabel())}</b><small>${S.role==='spec'?'požadavky ke schválení':S.role==='mgmt'?'jen čtení':'COS Liberec · editor'}</small></div></button>${S.rolePop?rolePopHTML():''}</div></div>
   <button class="linkbtn" data-act="help" title="Klávesové zkratky (?)">${ico('key')}<span>Klávesové zkratky</span></button>
   <button class="linkbtn${S.confirm==='reset'?' warn':''}" data-act="resetDemo" title="Obnovit ukázková data">${ico('reset')}<span>${S.confirm==='reset'?'Klepněte znovu – přepíše vaše úpravy':'Obnovit ukázková data'}</span></button></div>`;
@@ -2527,7 +2556,7 @@ function sideHTML(){
 function topHTML(){
   const n=ISSUES().length;
   return `<div class="years" role="tablist" aria-label="Plánovací rok">${YEARS.map(y=>`<button class="yr${S.year===y?' on':''}" role="tab" aria-selected="${S.year===y}" data-act="year" data-v="${y}">${y}</button>`).join('')}<span class="yr-note">${S.year>todayY?'plánovací rok':S.year===todayY?'aktuální rok':''}</span></div>
-  <div class="top-r"><button class="btn sm srch" data-act="cmd" title="Hledat sály, obory, data a akce (Ctrl/⌘ + K)">${ico('search')}<span>Hledat</span><kbd>⌘K</kbd></button><button class="btn sm undo" data-act="undo"${UNDO.length?'':' disabled'} title="Vrátit poslední změnu (Ctrl/⌘ + Z)">${ico('undo')}<span>Zpět</span></button><div class="seg theme" role="group" aria-label="Vzhled aplikace">${[['light','sun','Světlý'],['dark','moon','Tmavý']].map(([v,i,t])=>`<button data-act="theme" data-v="${v}" class="${S.theme===v?'on':''}" aria-pressed="${S.theme===v}">${ico(i)}<span>${t}</span></button>`).join('')}</div><span class="status"><i></i>${isCoord()?'Lokální data · bez databáze':S.role==='spec'?esc(roleLabel())+' · požadavky':'Vedení · jen čtení'}</span><button class="btn-dark" data-act="bulk">${ico('plus')}Hromadná úprava</button><button class="icon-btn" data-act="go" data-v="alerts" aria-label="Upozornění (${n})">${ico('bell')}${n?`<b>${n>99?'99+':n}</b>`:''}</button></div>`;
+  <div class="top-r"><button class="btn sm srch" data-act="cmd" title="Hledat sály, obory, data a akce (Ctrl/⌘ + K)">${ico('search')}<span>Hledat</span><kbd>⌘K</kbd></button><button class="btn sm undo" data-act="undo"${UNDO.length?'':' disabled'} title="Vrátit poslední změnu (Ctrl/⌘ + Z)">${ico('undo')}<span>Zpět</span></button><button class="icon-btn thm" data-act="theme" data-v="${S.theme==='dark'?'light':'dark'}" aria-label="${S.theme==='dark'?'Přepnout na světlý vzhled':'Přepnout na tmavý vzhled'}" title="${S.theme==='dark'?'Světlý vzhled':'Tmavý vzhled'}">${ico(S.theme==='dark'?'sun':'moon')}</button><span class="status"><i></i>${isCoord()?'Lokální data · bez databáze':S.role==='spec'?esc(roleLabel())+' · požadavky':'Vedení · jen čtení'}</span><button class="btn-dark" data-act="bulk">${ico('plus')}Hromadná úprava</button><button class="icon-btn" data-act="go" data-v="alerts" aria-label="Upozornění (${n})">${ico('bell')}${n?`<b>${n>99?'99+':n}</b>`:''}</button></div>`;
 }
 function printMeta(){
   if(S.view==='kal')return `${S.bc.mode==='year'?S.year:cap(MONTHS[+bcInit().m.slice(5,7)-1])+' '+S.bc.m.slice(0,4)} · ${S.bc.site==='all'||!SITE[S.bc.site]?'všechna pracoviště':SITE[S.bc.site].name}`;
@@ -2549,7 +2578,7 @@ function printMeta(){
 function ph(eb,t,right=''){
   const nx=upcoming(today,1)[0];
   return `<div class="print-h"><div><b>Rozpis operativy · Krajská nemocnice Liberec</b><span>${esc(t)}</span></div><div>${esc(printMeta())} · vytištěno ${fmtY(today)}</div></div>
-  <div class="ph"><div><div class="eyebrow"><i></i>${eb}</div><h1>${t}</h1></div><div class="ph-r">${right||`<div class="today">Dnes · ${DOW[isoDow(today)].toLowerCase()} ${fmtY(today)}${nx?`<span>Nejbližší: ${nx.from===nx.to?fmt(nx.from):fmt(nx.from)+'–'+fmt(nx.to)} ${esc(nx.label)}</span>`:''}</div>`}<button class="btn sm prt" data-act="print" title="Vytisknout tuto sekci">${ico('printer')}Tisk</button></div></div>`;
+  <div class="ph"><div><div class="eyebrow"><i></i>${eb}</div><h1>${t}</h1></div><div class="ph-r">${right||`<div class="today">Dnes · ${DOW[isoDow(today)].toLowerCase()} ${fmtY(today)}${nx?`<span><i></i>${nx.from===nx.to?fmt(nx.from):fmt(nx.from)+'–'+fmt(nx.to)} · ${esc(nx.label)}</span>`:''}</div>`}<button class="btn sm prt" data-act="print" title="Vytisknout tuto sekci">${ico('printer')}Tisk</button></div></div>`;
 }
 function kpi(label,num,unit,sub,color){return `<div class="kpi"${color?` style="--kc:${color}"`:''}><div class="lab"><i></i>${label}</div><div class="num">${num}${unit?`<small>${unit}</small>`:''}</div><div class="sub">${sub}</div></div>`;}
 const empty=t=>`<div class="empty">${t}</div>`;
