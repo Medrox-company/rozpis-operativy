@@ -9,8 +9,10 @@ Celá aplikace je jeden soubor `index.html`. Nemá žádný build ani server. Da
 - **Rozpis sálů:** roční plán sálů po půldnech, LA/CA, sudé a liché týdny, dospávací pokoje a externí sály.
 - **Kalendář a časová osa:** velký kalendář provozu, státní svátky a školní prázdniny podle kraje a okresu.
 - **Omezení a asanace:** omezení sálů, návrh asanačních dnů, přesun bloků do náhradních sálů a tisk za vybrané období.
-- **Personál:** potřeba lékařů, anesteziologických a sálových sester, upozornění na nedostatek a přehled možného volna.
-- **Požadavky a kapacity:** požadavky oborů, volné kapacity, kvóty, čekací listiny a zveřejnění plánu.
+- **Personál:** potřeba lékařů, anesteziologických a sálových sester, průběh dne, týdny roku a roční mapa, upozornění na nedostatek a přehled možného volna.
+- **Obsazenost sálů:** skupiny sálů, denní mapa, sál × období a tabulka.
+- **Požadavky a kapacity:** požadavky oborů (celý obor, o počet sálů, nebo vybrané sály), volné kapacity, kvóty, čekací listiny a zveřejnění plánu.
+- **Návrh obsazení:** provázání požadavků oborů a omezení sálů s návrhem náhradního obsazení uvolněných a zrušených bloků.
 - **Operační sály 3D:** model nemocnice s živým stavem sálů a editorem plánu budovy.
   - Stavy sálů: volný, příprava, výkon, úklid a Emergency.
   - Trasy transportu včetně výtahů.
