@@ -14,9 +14,11 @@ Celá aplikace je jeden soubor `index.html`. Nemá žádný build ani server. Da
 - **Požadavky a kapacity:** požadavky oborů (celý obor, o počet sálů, nebo vybrané sály), volné kapacity, kvóty, čekací listiny a zveřejnění plánu.
 - **Návrh obsazení:** provázání požadavků oborů a omezení sálů s návrhem náhradního obsazení uvolněných a zrušených bloků.
 - **Operační sály 3D:** model nemocnice s živým stavem sálů a editorem plánu budovy.
+  - Mapa areálu Liberec: 3D mapa pavilonů a oddělení se svítícími sály podle stavu, vyhledávání oddělení a průběh dne.
+  - Rozmístění sálů v areálu: pavilon A (2. a 3. patro), pavilon B (8. patro, COS NO), pavilon G (3. patro, COS GYN).
   - Stavy sálů: volný, příprava, výkon, úklid a Emergency.
-  - Trasy transportu včetně výtahů.
-  - Režimy Emergency a Hygiena.
+  - Trasy transportu včetně výtahů, převoz sanitkou mezi budovami, heliport a propojovací chodby.
+  - Režimy Emergency a Hygiena. Světlý i tmavý vzhled 3D modulu.
 - **Role:** koordinátor, obor a management. Aplikace má světlý i tmavý vzhled a tisk každé sekce.
 
 ## Spuštění
@@ -44,4 +46,4 @@ Bez internetu funguje vše kromě 3D modelu. Bez postprocessingu se 3D zobrazí 
 ## Poznámky
 
 - Stav sálů ve 3D se odvozuje z plánu operativy a pracovní doby. Nejde o napojení na nemocniční systém.
-- Rozvržení budovy ve 3D je ukázkové. Upravíte ho v **Editoru plánu**.
+- Rozvržení pavilonů na mapě areálu vychází z mapy areálu na nemlib.cz. Detailní model v **Sálech 3D** je ukázkový a upravíte ho v **Editoru plánu**.
